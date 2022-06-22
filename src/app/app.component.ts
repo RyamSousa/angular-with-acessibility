@@ -12,11 +12,15 @@ export class AppComponent implements OnInit {
 
 	ngOnInit(): void {
 		this.formGroup = new FormGroup({
-			yesNoAnswer: new FormControl(),
+			yesNoAnswer: new FormControl({
+				value: null,
+				disabled: false,
+			}),
 		});
 	}
 
 	public submit(): void {
+		this.formGroup.get("yesNoAnswer").disable();
 		console.log(this.formGroup.value);
 	}
 }

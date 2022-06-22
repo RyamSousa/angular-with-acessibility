@@ -14,11 +14,9 @@ import { UniqueIdService } from "../../services/unique-id/unique-id.service";
 	],
 })
 export class YesNoButtonGroupComponent implements ControlValueAccessor {
-	@Input()
-	public value: string = null;
-
-	@Input()
-	public label: string = "";
+	@Input() public disabled = false;
+	@Input() public value: string = null;
+	@Input() public label: string = "";
 
 	public id: string = null;
 
@@ -48,7 +46,7 @@ export class YesNoButtonGroupComponent implements ControlValueAccessor {
 	}
 
 	public setDisabledState?(isDisabled: boolean): void {
-		throw new Error("Method not implemented.");
+		this.disabled = isDisabled;
 	}
 
 	public activate(value: string) {
