@@ -12,7 +12,7 @@ export class AppComponent implements OnInit {
 
 	ngOnInit(): void {
 		this.formGroup = new FormGroup({
-			yesNoAnswer: new FormControl("no"),
+			yesNoAnswer: new FormControl(),
 		});
 	}
 
